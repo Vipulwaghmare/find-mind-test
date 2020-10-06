@@ -1,38 +1,319 @@
-.App {
-  text-align: center;
+:root{
+  --main-color: #192A56;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Log in */
+.login-main{
+  background-color: var(--main-color);
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.login-title{
+  margin-bottom: 1.5em;
+}
+.login-form{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+}
+.login-fieldset{
+  margin-bottom: 1em;
+}
+.login-legend{
+  text-align: center;
+  font-size: x-small;
+}
+.login-input{
+  background-color: transparent;
+  color: white;
+  border: 0;
+  width: 95%;
+  padding: 5px;
+}
+.login-input:focus{
+  border: 0px;
+}
+.login-end{
+  display: flex;
+  font-size: x-small;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+.login-end-span{
+  padding-left: 5px;
+}
+.login-checkbox{
+  background-color: var(--main-color);
+}
+.login-submit{
+  background-color: white;
+  color: var(--main-color);
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 1em 3em;
+  font-weight: 600;
+}
+.success-message{
+  color: #2ecc72;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+.error-message{
+  color: #B83227;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+/* TasksBoard */
+.main-header{
+  background-color: var(--main-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.main-icon{
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.main-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-icon{
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  margin: 10px auto;
+  margin-right: 4em;
+}
+/* Tasks */
+.task-main{
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  margin: 1em;
+  padding: 1em;
+  max-width: 300px;
+}
+.task-section{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+.task-title{
+  display: flex;
+  justify-content: space-between;
+}
+.task-input{
+  height: 2.5em;
+  border: 0;
+}
+.task-input-left{
+  height: 2.5em;
+  margin: 1em 0;
+  border: 0;
+  margin-left: 1em;
+}
+.task-add-button{
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  border: 0;
+  background-color: var(--main-color);
+  color: white;
+  margin-left: 0.25em;
+}
+
+.task-add-button-left{
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  border: 0;
+  background-color: var(--main-color);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.incomplete-check{
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background-color: white;
+  color: white;
+  border: 1px solid var(--main-color);
+  margin-bottom: 1em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.incomplete-tasks{
+  display: flex;
+}
+.incomplete-right{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.incomplete-right-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.incomplete-name {
+  margin-left: 1em;
+  border: 0;
+  background-color: transparent;
+  font-weight: 550;
+  color: var(--main-color);
+  max-width: 200px;
+  word-wrap: break-word;
+  text-align: left;
+}
+.incomplete-edit{
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+  background-color: transparent;
+  margin-right: 1em;
+}
+.task-date{
+  background-color: rgba(137,196,244,0.4);
+  text-align: center;
+  width: 60%;
+  padding: 3px 0;
+}
+.task-details {
+  color: var(--main-color);
+  word-wrap: break-word;
+  padding-left: 1em;
+  font-size: small;
+  width: 90%;
+  font-weight: 550;
+}
+/* Edit part */
+.edit-top-buttons{
+  border: 1px solid var(--main-color);
+  background-color: transparent;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+.edit-tasks-full{
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  left: 0;
+  background-color: rgba(137,196,244,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit-tasks{
+  background-color: white;
+  padding: 1em;
+}
+.edit-task-header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.edit-task-p{
+  color: var(--main-color);
+  font-size: small;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+.edit-task-detail{
+  border: 0;
+  background-color: rgba(137,196,244,0.2);
+  height: 5em;
+  width: 100%;
+}
+/* Completed Tasks */
+.completed-h5{
+  color: green;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.completed-tasks{
+  display: flex;
+  margin-bottom: 1em;
+}
+.completed-tick{
+  width: 2em;
+  height: 2em;
+  border: 1px solid green;
+  border-radius: 50%;
+}
+.completed-task-name {
+  margin-left: 0.5em;
+  color: green;
+  max-width: 200px;
+  word-wrap: break-word;
+  text-align: left;
+}
+/* End + icon */
+.main-add-icon{
+  width: 4em;
+  height: 4em;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 3em;
+  right: 3em; 
+  z-index: 50;
+}
+/* new list */
+.add-new-list{
+  background-color: rgba(137,196,244,0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-section{
+  background-color: white;
+  padding: 0.5em;
+  min-width: 200px;
+}
+/* HOME */
+.home{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.first{
+  background-color: var(--main-color);
+  width: 50%;
+  color: wheat;
+  text-align: center;
+}
+.first-link{
+  color: wheat;
+  margin: 0 3em;
+  text-align: center;
+}
+.second{
+  background-color: var(--main-color);
+  color: white;
+  width: 50%;
+  text-align: center;
 }
